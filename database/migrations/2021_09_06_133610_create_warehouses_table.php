@@ -15,6 +15,9 @@ class CreateWarehousesTable extends Migration
     {
         Schema::create('warehouses', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('material_id')->constrained()->cascadeOnDelete();
+            $table->float('remainder');
+            $table->float('price');
             $table->timestamps();
         });
     }

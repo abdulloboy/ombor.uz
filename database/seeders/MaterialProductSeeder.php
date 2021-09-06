@@ -3,9 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Material;
 
-class MaterialSeeder extends Seeder
+class MaterialProductSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +13,6 @@ class MaterialSeeder extends Seeder
      */
     public function run()
     {
-        
+        //
     }
 }

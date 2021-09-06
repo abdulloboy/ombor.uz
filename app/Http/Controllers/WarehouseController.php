@@ -12,9 +12,11 @@ class WarehouseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        foreach ($request->all() as $product){
+            dd($product['product_id']);
+        }
     }
 
     /**
