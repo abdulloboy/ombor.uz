@@ -11,7 +11,7 @@ class DatabaseSeeder extends Seeder
 {
     /**
      * Seed the application's database.
-     *
+     * Ma'lumotlar omborini boshlang'ich ma'lumotlar bilan to'ldiradi.
      * @return void
      */
     public function run()

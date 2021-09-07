@@ -21,4 +21,18 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+/*
+Ombor.uz ga API orqali JSON so'rov beriladi.
+So'rovga misol:
+    [
+        { 
+            "product_id": 1,
+            "quantity" : 30 
+        },
+        { 
+            "product_id": 2,
+            "quantity" : 20 
+        }
+    ]
+*/
 Route::post('warehouses', [WarehouseController::class,'index']);

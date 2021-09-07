@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class WarehouseController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Ombor.uzga API orqali JSON so'rov berilganda ishlaydi va natijani qaytaradi.
      *
      * @return \Illuminate\Http\Response
      */
