@@ -13,4 +13,9 @@ class Material extends Model
     {
         return $this->belongsToMany(Product::class);
     }
+
+    public function warehouses()
+    {
+        return $this->hasMany(Warehouse::class);
+    }
 }

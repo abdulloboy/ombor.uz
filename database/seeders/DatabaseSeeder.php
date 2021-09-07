@@ -87,11 +87,5 @@ class DatabaseSeeder extends Seeder
             'price' => 2000,
         ]);
         
-        $this->call([
-            MaterialSeeder::class,
-            ProductSeeder::class,
-            WarehouseSeeder::class,
-            MaterialProductSeeder::class,
-        ]);
     }
 }
