@@ -1,0 +1,79 @@
+name: Endpoints
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/user
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/warehouses
+    metadata:
+      title: 'Ombor.uzga API orqali JSON so''rov berilganda ishlaydi va natijani qaytaradi.'
+      description: |-
+        Misol:
+        [
+         {
+             "product_id": 1,
+             "quantity": 30
+         },
+         {
+             "product_id": 2,
+             "quantity": 2
+         }
+        ]
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      products:
+        name: products
+        description: 'Mahsulot ro''yhati.'
+        required: true
+        example:
+          - []
+          - []
+        type: 'object[]'
+      products.product_id:
+        name: products.product_id
+        description: 'So''ralayotgan mahsulot Id si yoziladi.'
+        required: true
+        example: 12
+        type: integer
+      products.quantity:
+        name: products.quantity
+        description: 'So''ralayotgan mahsulotdan nechta kerakligi yoziladi.'
+        required: true
+        example: 8
+        type: integer
+    responses:
+      -
+        status: 200
+        content: '{"result":[{"product_name":"Ko''ylak","product_qty":30,"product_materials":[{"warehouse_id":1,"material_name":"Mato","qty":12,"price":1500},{"warehouse_id":2,"material_name":"Mato","qty":12,"price":1600},{"warehouse_id":3,"material_name":"Ip","qty":40,"price":500},{"warehouse_id":4,"material_name":"Ip","qty":260,"price":550},{"warehouse_id":5,"material_name":"Tugma","qty":150,"price":300}]},{"product_name":"Shim","product_qty":20,"product_materials":[{"warehouse_id":2,"material_name":"Mato","qty":28,"price":1600},{"warehouse_id":4,"material_name":"Ip","qty":40,"price":550},{"warehouse_id":null,"material_name":"Ip","qty":260,"price":null},{"warehouse_id":6,"material_name":"Zamok","qty":20,"price":2000}]}]}'
+        headers: []
+        description: '200'
+    responseFields: []

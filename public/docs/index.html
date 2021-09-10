@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Ombor.uz Documentation</title>
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../docs/css/theme-default.style.css" media="screen">
+    <link rel="stylesheet" href="../docs/css/theme-default.print.css" media="print">
+    <script src="../docs/js/theme-default-3.10.1.js"></script>
+
+    <link rel="stylesheet"
+          href="//unpkg.com/@highlightjs/cdn-assets@10.7.2/styles/obsidian.min.css">
+    <script src="//unpkg.com/@highlightjs/cdn-assets@10.7.2/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <script src="//cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+    <script>
+        var baseUrl = "http://ombor.uz";
+        var useCsrf = Boolean();
+        var csrfUrl = "/sanctum/csrf-cookie";
+    </script>
+    <script src="../docs/js/tryitout-3.10.1.js"></script>
+
+</head>
+
+<body data-languages="[&quot;bash&quot;,&quot;javascript&quot;]">
+<a href="#" id="nav-button">
+      <span>
+        MENU
+        <img src="../docs/images/navbar.png" alt="navbar-image" />
+      </span>
+</a>
+<div class="tocify-wrapper">
+                <div class="lang-selector">
+                            <a href="#" data-language-name="bash">bash</a>
+                            <a href="#" data-language-name="javascript">javascript</a>
+                    </div>
+        <div class="search">
+        <input type="text" class="search" id="input-search" placeholder="Search">
+    </div>
+    <ul class="search-results"></ul>
+
+    <ul id="toc">
+    </ul>
+
+            <ul class="toc-footer" id="toc-footer">
+                            <li><a href="../docs/collection.json">View Postman collection</a></li>
+                            <li><a href="../docs/openapi.yaml">View OpenAPI spec</a></li>
+                            <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
+                    </ul>
+            <ul class="toc-footer" id="last-updated">
+            <li>Last updated: September 10 2021</li>
+        </ul>
+</div>
+<div class="page-wrapper">
+    <div class="dark-box"></div>
+    <div class="content">
+        <h1>Introduction</h1>
+<p>This documentation aims to provide all the information you need to work with our API.</p>
+<aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
+You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
+<blockquote>
+<p>Base URL</p>
+</blockquote>
+<pre><code class="language-yaml">http://ombor.uz</code></pre>
+
+        <h1>Authenticating requests</h1>
+<p>This API is not authenticated.</p>
+
+        <h1 id="endpoints">Endpoints</h1>
+
+    
+
+            <h2 id="endpoints-GETapi-user">GET api/user</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-user">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request GET \
+    --get "http://ombor.uz/api/user" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://ombor.uz/api/user"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-GETapi-user">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-user" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-user"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-user"></code></pre>
+</span>
+<span id="execution-error-GETapi-user" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-user"></code></pre>
+</span>
+<form id="form-GETapi-user" data-method="GET"
+      data-path="api/user"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-user', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-user"
+                    onclick="tryItOut('GETapi-user');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-user"
+                    onclick="cancelTryOut('GETapi-user');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-user" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/user</code></b>
+        </p>
+                    </form>
+
+            <h2 id="endpoints-POSTapi-warehouses">Ombor.uzga API orqali JSON so&#039;rov berilganda ishlaydi va natijani qaytaradi.</h2>
+
+<p>
+</p>
+
+<p>Misol:
+[
+{
+&quot;product_id&quot;: 1,
+&quot;quantity&quot;: 30
+},
+{
+&quot;product_id&quot;: 2,
+&quot;quantity&quot;: 2
+}
+]</p>
+
+<span id="example-requests-POSTapi-warehouses">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://ombor.uz/api/warehouses" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"products\": {
+        \"product_id\": 12,
+        \"quantity\": 8
+    }
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://ombor.uz/api/warehouses"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "products": {
+        "product_id": 12,
+        "quantity": 8
+    }
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-warehouses">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;result&quot;: [
+        {
+            &quot;product_name&quot;: &quot;Ko'ylak&quot;,
+            &quot;product_qty&quot;: 30,
+            &quot;product_materials&quot;: [
+                {
+                    &quot;warehouse_id&quot;: 1,
+                    &quot;material_name&quot;: &quot;Mato&quot;,
+                    &quot;qty&quot;: 12,
+                    &quot;price&quot;: 1500
+                },
+                {
+                    &quot;warehouse_id&quot;: 2,
+                    &quot;material_name&quot;: &quot;Mato&quot;,
+                    &quot;qty&quot;: 12,
+                    &quot;price&quot;: 1600
+                },
+                {
+                    &quot;warehouse_id&quot;: 3,
+                    &quot;material_name&quot;: &quot;Ip&quot;,
+                    &quot;qty&quot;: 40,
+                    &quot;price&quot;: 500
+                },
+                {
+                    &quot;warehouse_id&quot;: 4,
+                    &quot;material_name&quot;: &quot;Ip&quot;,
+                    &quot;qty&quot;: 260,
+                    &quot;price&quot;: 550
+                },
+                {
+                    &quot;warehouse_id&quot;: 5,
+                    &quot;material_name&quot;: &quot;Tugma&quot;,
+                    &quot;qty&quot;: 150,
+                    &quot;price&quot;: 300
+                }
+            ]
+        },
+        {
+            &quot;product_name&quot;: &quot;Shim&quot;,
+            &quot;product_qty&quot;: 20,
+            &quot;product_materials&quot;: [
+                {
+                    &quot;warehouse_id&quot;: 2,
+                    &quot;material_name&quot;: &quot;Mato&quot;,
+                    &quot;qty&quot;: 28,
+                    &quot;price&quot;: 1600
+                },
+                {
+                    &quot;warehouse_id&quot;: 4,
+                    &quot;material_name&quot;: &quot;Ip&quot;,
+                    &quot;qty&quot;: 40,
+                    &quot;price&quot;: 550
+                },
+                {
+                    &quot;warehouse_id&quot;: null,
+                    &quot;material_name&quot;: &quot;Ip&quot;,
+                    &quot;qty&quot;: 260,
+                    &quot;price&quot;: null
+                },
+                {
+                    &quot;warehouse_id&quot;: 6,
+                    &quot;material_name&quot;: &quot;Zamok&quot;,
+                    &quot;qty&quot;: 20,
+                    &quot;price&quot;: 2000
+                }
+            ]
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-warehouses" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-warehouses"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-warehouses"></code></pre>
+</span>
+<span id="execution-error-POSTapi-warehouses" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-warehouses"></code></pre>
+</span>
+<form id="form-POSTapi-warehouses" data-method="POST"
+      data-path="api/warehouses"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-warehouses', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-warehouses"
+                    onclick="tryItOut('POSTapi-warehouses');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-warehouses"
+                    onclick="cancelTryOut('POSTapi-warehouses');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-warehouses" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/warehouses</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b><code>products</code></b>&nbsp;&nbsp;<small>object[]</small>  &nbsp;
+<br>
+<p>Mahsulot ro'yhati.</p>            </summary>
+                                                <p>
+                        <b><code>products.product_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="products.product_id"
+               data-endpoint="POSTapi-warehouses"
+               data-component="body" required  hidden>
+    <br>
+<p>So'ralayotgan mahsulot Id si yoziladi.</p>                    </p>
+                                                                <p>
+                        <b><code>products.quantity</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="products.quantity"
+               data-endpoint="POSTapi-warehouses"
+               data-component="body" required  hidden>
+    <br>
+<p>So'ralayotgan mahsulotdan nechta kerakligi yoziladi.</p>                    </p>
+                                    </details>
+        </p>
+    
+    </form>
+
+    
+
+        
+    </div>
+    <div class="dark-box">
+                    <div class="lang-selector">
+                                    <a href="#" data-language-name="bash">bash</a>
+                                    <a href="#" data-language-name="javascript">javascript</a>
+                            </div>
+            </div>
+</div>
+<script>
+    $(function () {
+        var exampleLanguages = ["bash","javascript"];
+        setupLanguages(exampleLanguages);
+    });
+</script>
+</body>
+</html>

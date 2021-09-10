@@ -1,0 +1,116 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "ombor.uz"
+        }
+    ],
+    "info": {
+        "name": "Ombor.uz",
+        "_postman_id": "e8728191-b0a8-4d5b-b23b-214d9d7f617c",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "api\/user",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/user",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/user"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Ombor.uzga API orqali JSON so'rov berilganda ishlaydi va natijani qaytaradi.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/warehouses",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/warehouses"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"products\":{\"product_id\":12,\"quantity\":8}}"
+                        },
+                        "description": "Misol:\n[\n {\n     \"product_id\": 1,\n     \"quantity\": 30\n },\n {\n     \"product_id\": 2,\n     \"quantity\": 2\n }\n]",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"result\":[{\"product_name\":\"Ko'ylak\",\"product_qty\":30,\"product_materials\":[{\"warehouse_id\":1,\"material_name\":\"Mato\",\"qty\":12,\"price\":1500},{\"warehouse_id\":2,\"material_name\":\"Mato\",\"qty\":12,\"price\":1600},{\"warehouse_id\":3,\"material_name\":\"Ip\",\"qty\":40,\"price\":500},{\"warehouse_id\":4,\"material_name\":\"Ip\",\"qty\":260,\"price\":550},{\"warehouse_id\":5,\"material_name\":\"Tugma\",\"qty\":150,\"price\":300}]},{\"product_name\":\"Shim\",\"product_qty\":20,\"product_materials\":[{\"warehouse_id\":2,\"material_name\":\"Mato\",\"qty\":28,\"price\":1600},{\"warehouse_id\":4,\"material_name\":\"Ip\",\"qty\":40,\"price\":550},{\"warehouse_id\":null,\"material_name\":\"Ip\",\"qty\":260,\"price\":null},{\"warehouse_id\":6,\"material_name\":\"Zamok\",\"qty\":20,\"price\":2000}]}]}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}

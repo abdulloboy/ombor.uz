@@ -1,0 +1,220 @@
+openapi: 3.0.3
+info:
+  title: Ombor.uz
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://ombor.uz'
+paths:
+  /api/user:
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/warehouses:
+    post:
+      summary: 'Ombor.uzga API orqali JSON so''rov berilganda ishlaydi va natijani qaytaradi.'
+      description: "Misol:\n[\n {\n     \"product_id\": 1,\n     \"quantity\": 30\n },\n {\n     \"product_id\": 2,\n     \"quantity\": 2\n }\n]"
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  result:
+                    -
+                      product_name: 'Ko''ylak'
+                      product_qty: 30
+                      product_materials:
+                        -
+                          warehouse_id: 1
+                          material_name: Mato
+                          qty: 12
+                          price: 1500
+                        -
+                          warehouse_id: 2
+                          material_name: Mato
+                          qty: 12
+                          price: 1600
+                        -
+                          warehouse_id: 3
+                          material_name: Ip
+                          qty: 40
+                          price: 500
+                        -
+                          warehouse_id: 4
+                          material_name: Ip
+                          qty: 260
+                          price: 550
+                        -
+                          warehouse_id: 5
+                          material_name: Tugma
+                          qty: 150
+                          price: 300
+                    -
+                      product_name: Shim
+                      product_qty: 20
+                      product_materials:
+                        -
+                          warehouse_id: 2
+                          material_name: Mato
+                          qty: 28
+                          price: 1600
+                        -
+                          warehouse_id: 4
+                          material_name: Ip
+                          qty: 40
+                          price: 550
+                        -
+                          warehouse_id: null
+                          material_name: Ip
+                          qty: 260
+                          price: null
+                        -
+                          warehouse_id: 6
+                          material_name: Zamok
+                          qty: 20
+                          price: 2000
+                properties:
+                  result:
+                    type: array
+                    example:
+                      -
+                        product_name: 'Ko''ylak'
+                        product_qty: 30
+                        product_materials:
+                          -
+                            warehouse_id: 1
+                            material_name: Mato
+                            qty: 12
+                            price: 1500
+                          -
+                            warehouse_id: 2
+                            material_name: Mato
+                            qty: 12
+                            price: 1600
+                          -
+                            warehouse_id: 3
+                            material_name: Ip
+                            qty: 40
+                            price: 500
+                          -
+                            warehouse_id: 4
+                            material_name: Ip
+                            qty: 260
+                            price: 550
+                          -
+                            warehouse_id: 5
+                            material_name: Tugma
+                            qty: 150
+                            price: 300
+                      -
+                        product_name: Shim
+                        product_qty: 20
+                        product_materials:
+                          -
+                            warehouse_id: 2
+                            material_name: Mato
+                            qty: 28
+                            price: 1600
+                          -
+                            warehouse_id: 4
+                            material_name: Ip
+                            qty: 40
+                            price: 550
+                          -
+                            warehouse_id: null
+                            material_name: Ip
+                            qty: 260
+                            price: null
+                          -
+                            warehouse_id: 6
+                            material_name: Zamok
+                            qty: 20
+                            price: 2000
+                    items:
+                      type: object
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                products:
+                  type: array
+                  description: 'Mahsulot ro''yhati.'
+                  example:
+                    - []
+                    - []
+                  items:
+                    type: object
+                    properties:
+                      product_id:
+                        type: integer
+                        description: 'So''ralayotgan mahsulot Id si yoziladi.'
+                        example: 12
+                      quantity:
+                        type: integer
+                        description: 'So''ralayotgan mahsulotdan nechta kerakligi yoziladi.'
+                        example: 8
+                    required:
+                      - product_id
+                      - quantity
+              required:
+                - products
+      security: []
+tags:
+  -
+    name: Endpoints
+    description: ''
